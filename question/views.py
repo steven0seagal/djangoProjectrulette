@@ -1,6 +1,11 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .models import Question, Choice
+from .serializers import QuestionSerializer, ChoiceSerializer
 
-def question(request):
-    return render(request, 'quiz/single_question.html')
+class QuestionViewSet(viewsets.ModelViewSet):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
 
+class ChoiceViewSet(viewsets.ModelViewSet):
+    queryset = Choice.objects.all()
+    serializer_class = ChoiceSerializer
