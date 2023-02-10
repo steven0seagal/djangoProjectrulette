@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.contrib.auth.models import User
+from register.models import Team
 # Create your models here.
 
 class Question(models.Model):
@@ -16,3 +17,9 @@ class Choice(models.Model):
         if self.is_correct:
             Choice.objects.filter(question=self.question).update(is_correct=False)
         super().save(*args, **kwargs)
+
+
+class Answer(models.Model):
+    user = models.ForeignKey(Team, on_delete=models.CASCADE)
+    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
+    answer_date = models.DateTimeField(auto_now_add=True)
