@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="This site provides important tool for analyzing gene neighborhood and cooccurrence. It also works with your alignments and much more."/>
+    <meta name="keywords" content="neighborhood, neighbourhood, cooccurrence, occurrence, alignments, sequences, Bartosz Baranowski"/>
+    <meta name="author" content="Bartosz Baranowski"/>
+    <meta name="copyright" content="Bartosz Piotr Baranowski"/>
+    <meta name="generator" content="DJANGO"/>
+    <meta name="robot" content="all"/>
+    <title>uTAS {% block title %}{%endblock%}</title>
+    <link rel="icon" type="image/png" sizes="16x16"  href="{% static 'img/favicon-16x16.png' %}" >
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+ <!-- TOP BAR -->
+{#{% include 'partials/_navbar.html' %}#}
+<!-- NAV BAR -->
+{#{% include 'partials/_topbar.html' %}#}
+
+{% block content %} {% endblock %}
+
+<!-- FOOTER -->
+{#{% include 'partials/_footer.html' %}#}
+
+
+<!-- Bootstrap core JavaScript
+================================================= -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
