@@ -5,7 +5,7 @@ from register.models import Team
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published', auto_now_add=True, blank=True, null=True)
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
@@ -18,6 +18,8 @@ class Choice(models.Model):
             Choice.objects.filter(question=self.question).update(is_correct=False)
         super().save(*args, **kwargs)
 
+    def __str__(self):
+        return self.question.question_text
 
 class Answer(models.Model):
     user = models.ForeignKey(Team, on_delete=models.CASCADE)

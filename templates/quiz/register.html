@@ -53,39 +53,40 @@
                 <img class="rounded mx-auto d-block" src="https://media.istockphoto.com/vectors/dream-team-text-group-of-young-people-teamwork-vector-id1143144374?k=20&m=1143144374&s=612x612&w=0&h=Ux0iryQhY1lnGynXi3aKcyfGhxXuaVrAqX9FpM5xYn8=">
 
         </div>
-        <div class="container">
-            <h2 class="text-center">Please sign up your team </h2>
-            <div class="container">
-                <h3>Team's name</h3>
-                </br>
-                <input class="form-control form-control-lg" type="text" placeholder="Project Manhattan" aria-label=".form-control-lg example">
-                </br>
-                </br>
-                <h3>Participants</h3>
-                </br>
-                <input class="form-control form-control-lg" type="text" placeholder="John" aria-label=".form-control-lg example">
-                </br>
-                <input class="form-control form-control-lg" type="text" placeholder="Ann" aria-label=".form-control-lg example">
-                </br>
-                <input class="form-control form-control-lg" type="text" placeholder="Kate" aria-label=".form-control-lg example">
-                </br>
-                <input class="form-control form-control-lg" type="text" placeholder="Steven" aria-label=".form-control-lg example">
-                </br>
-                <input class="form-control form-control-lg" type="text" placeholder="Tom" aria-label=".form-control-lg example">
-                </br>
-                <input class="form-control form-control-lg" type="text" placeholder="Lana" aria-label=".form-control-lg example">
-                </br>
-                </br>
+        <form>
+            {% csrf_token %}
 
-            </div>
             <div class="container">
-                <div class="d-grid gap-2">
+                <h2 class="text-center">Please sign up your team </h2>
+                <div class="container">
+                    <h3>Team's name</h3>
+                    </br>
+                    <input class="form-control form-control-lg" type="text" value="Project Manhattan" aria-label=".form-control-lg example" name="team_name">
+                    </br>
+                    </br>
+                    <h3>Participants</h3>
+                    </br>
+                    <input class="form-control form-control-lg" type="text" value="John" aria-label=".form-control-lg example" >
+                    </br>
+                    <input class="form-control form-control-lg" type="text" value="Ann" aria-label=".form-control-lg example">
+                    </br>
+                    <input class="form-control form-control-lg" type="text" value="Kate" aria-label=".form-control-lg example">
+                    </br>
+                    <input class="form-control form-control-lg" type="text" value="Steven" aria-label=".form-control-lg example">
+                    </br>
+                    <input class="form-control form-control-lg" type="text" value="Tom" aria-label=".form-control-lg example">
+                    </br>
+                    <input class="form-control form-control-lg" type="text" value="Lana" aria-label=".form-control-lg example">
+                    </br>
+                    </br>
 
-                    <button class="btn btn-primary" type="button">Let`s QUIZ !!!</button>
+                    <div class="d-grid gap-2">
+                        <a type="button" methods="POST" class="btn btn-primary" href="{% url 'create_account' %}">CLICK FOR NEXT STEP !!!</a>
+
+    {#                    <button class="btn btn-primary" type="button">Let`s QUIZ !!!</button>#}
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
-      </div>
-
+          </div>
+        </form>
 {% endblock %}
